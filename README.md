@@ -1,29 +1,10 @@
 # Matplotlib Tutorial for Open Data Week NYC 2026
 
+live notebook: https://story645.github.io/odwny2026
 
 ### Get started
+live notebook: https://story645.github.io/odwny2026
 
-`git clone` this repo locally or open codespaces
-  
-If cloned locally, create the conda environment by going into the folder and typing:
-```
-path\to\odwny> conda env create -f environment.yml
-```
-then activate the environment
-```
-path\to\odwny> conda activate odw
-```
-then install the jupyter interactive extensions:
-
-```
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-jupyter labextension install jupyter-matplotlib
-```
-then open jupyterlab inside this folder:
-
-```
-path\to\odwny>(odw) jupyter lab
-```
 
 Then go to [notebook 1: static visualizations]()
 
