@@ -9,7 +9,7 @@ dependencies:
   - matplotlib
   - pandas
   - geopandas
-  - jupyterlab>=3
+  - jupyterlab
   - ipympl
   - ipywidgets
   - ipycanvas
