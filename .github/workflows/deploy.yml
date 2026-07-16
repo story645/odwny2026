@@ -24,12 +24,15 @@ jobs:
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
-          npm install -g pyodide-cli
-          python .github/workflows/install_pkg.py
+      - name: GeoPandas 
+        run: |
+          pip install npm
+          pip install pyodide-cli
+          python -c "import pyodide; pyodide.loadPackage('micropip'); import micropip; micropip.install('geopandas'); import requests; print('Success!')"
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content --output-dir dist
+          jupyter lite build --contents content --output-dir dist --pyodide 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
