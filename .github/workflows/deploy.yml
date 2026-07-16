@@ -24,9 +24,11 @@ jobs:
       - name: Install the dependencies
         run: |
           python -m pip install -r requirements.txt
-      - name: Install geopandas
+      - name: Download and Index GeoPandas Wheels
         run: |
-          python -m .github/workflows/install_pkg.py
+          mkdir pypi
+          jupyter lite pip download --dest pypi geopandas
+          jupyter lite pip index pypi
       - name: Build the JupyterLite site
         run: |
           cp README.md content
