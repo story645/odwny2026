@@ -3,9 +3,6 @@ channels:
   - https://repo.prefix.dev/emscripten-forge-dev
   - https://repo.prefix.dev/conda-forge
 dependencies:
-  - jupyterlab
-  - jupyterlab-night
-  - jupyterlab-geojson
   - xeus-python
   - ipywidgets
   - ipympl
