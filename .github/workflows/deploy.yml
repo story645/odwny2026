@@ -27,7 +27,7 @@ jobs:
       - name: GeoPandas 
         run: |
           pip install npm
-          pip install pyodide-cli
+          pip install pyodide-py pyodide-cli
           python -c "import pyodide; pyodide.loadPackage('micropip'); import micropip; micropip.install('geopandas'); import requests; print('Success!')"
       - name: Build the JupyterLite site
         run: |
