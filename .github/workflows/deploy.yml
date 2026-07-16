@@ -26,9 +26,16 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Download and Index GeoPandas Wheels
         run: |
-          mkdir pypi
-          pip download --only-binary=:all: --dest pypi geopandas
-          jupyter lite pip index pypi
+          mkdir -p pypi
+          # Try to download geopandas wheels; allow failure because manylinux wheels
+          # are not Pyodide-compatible (Pyodide requires WASM/pyodide-built wheels).
+          pip download --only-binary=:all: --dest pypi geopandas || true
+          if [ -n "$(ls -A pypi 2>/dev/null)" ]; then
+            jupyter lite pip index pypi
+          else
+            echo "No geopandas wheels found (likely not Pyodide-compatible). Skipping pip index."
+            echo "To run geopandas in a JupyterLite Pyodide kernel you'll need Pyodide-built wheels or a server-side kernel."
+          fi
       - name: Build the JupyterLite site
         run: |
           cp README.md content
