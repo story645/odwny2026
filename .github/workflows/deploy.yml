@@ -27,7 +27,7 @@ jobs:
       - name: Download and Index GeoPandas Wheels
         run: |
           mkdir pypi
-          jupyter lite pip download --dest pypi geopandas
+          pip download --only-binary=:all: --dest pypi geopandas
           jupyter lite pip index pypi
       - name: Build the JupyterLite site
         run: |
