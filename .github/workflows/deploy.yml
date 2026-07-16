@@ -26,7 +26,7 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Install geopandas
         run: |
-          python install_pkg.py
+          python .github\workflows\install_pkg.py
       - name: Build the JupyterLite site
         run: |
           cp README.md content
