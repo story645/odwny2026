@@ -4,9 +4,6 @@ channels:
   - https://repo.prefix.dev/conda-forge
 dependencies:
   - xeus-python
-  - ipywidgets
-  - ipympl
-  - ipycanvas
   - ipympl
   - matplotlib
   - pandas
